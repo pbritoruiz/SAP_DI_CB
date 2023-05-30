@@ -1,0 +1,63 @@
+{
+    "properties": {},
+    "processes": {
+        "python3operator1": {
+            "component": "com.sap.system.python3Operator",
+            "metadata": {
+                "label": "Python3 Operator",
+                "x": 12,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "extensible": true,
+                "filesRequired": [
+                    "script.py"
+                ],
+                "generation": 1,
+                "config": {
+                    "script": "def gen():\n    api.send(\"output\", api.Message(body=\"Teste\"))\n    \napi.add_generator(gen)"
+                },
+                "additionaloutports": [
+                    {
+                        "name": "output",
+                        "type": "message"
+                    }
+                ]
+            }
+        },
+        "wiretap1": {
+            "component": "com.sap.util.wiretap",
+            "metadata": {
+                "label": "Wiretap",
+                "x": 181,
+                "y": 12,
+                "height": 80,
+                "width": 120,
+                "generation": 1,
+                "ui": "dynpath",
+                "config": {}
+            }
+        }
+    },
+    "groups": [],
+    "connections": [
+        {
+            "metadata": {
+                "points": "136,52 176,52"
+            },
+            "src": {
+                "port": "output",
+                "process": "python3operator1"
+            },
+            "tgt": {
+                "port": "in",
+                "process": "wiretap1"
+            }
+        }
+    ],
+    "inports": {},
+    "outports": {},
+    "metadata": {
+        "generation": 1
+    }
+}

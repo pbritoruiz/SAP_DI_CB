@@ -1,0 +1,10 @@
+flowagent/
+ca/
+dex/
+launchpad/
+vflow/general
+vlow/subdevkits
+vlow/var
+vlow/.repoid
+*.pyc
+__pycache__/
