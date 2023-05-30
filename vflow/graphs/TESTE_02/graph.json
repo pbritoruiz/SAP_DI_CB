@@ -1,5 +1,6 @@
 {
     "properties": {},
+    "description": "",
     "processes": {
         "python3operator1": {
             "component": "com.sap.system.python3Operator",
@@ -15,7 +16,7 @@
                 ],
                 "generation": 1,
                 "config": {
-                    "script": "def gen():\n    api.send(\"output\", api.Message(body=\"Teste\"))\n    \napi.add_generator(gen)"
+                    "script": "def gen():\n    api.send(\"output\", api.Message(body=\"Teste 12345\"))\n    \napi.add_generator(gen)"
                 },
                 "additionaloutports": [
                     {
